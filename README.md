@@ -2,7 +2,7 @@
 
 #GitHub link: https://github.com/00011269/webtechnology_cw2
 
-#Glitch link:
+#Glitch link: https://inconclusive-cubic-cairnsmore.glitch.me
 
 ##This web application made in order to fulfill requirements of xcoursework from web technology module
 
