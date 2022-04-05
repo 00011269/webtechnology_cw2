@@ -21,6 +21,7 @@ app.get("/create", (req, res) => {
   res.render("create");
 });
 
+//Create method function
 app.post("/create", (req, res) => {
   const FullName = req.body.FullName;
   const Email = req.body.Email;
@@ -60,6 +61,7 @@ app.post("/create", (req, res) => {
   }
 });
 
+// Get method function
 app.get("/api/v1/profiles", (req, res) => {
   fs.readFile("./data/profiles.json", (err, data) => {
     if (err) throw err;
@@ -101,6 +103,7 @@ app.get("/profiles/:id", (req, res) => {
 });
 //
 
+//Delete method function
 app.post("/profiles/delete/:id", (req, res) => {
   const id = req.params.id;
 
@@ -120,7 +123,7 @@ app.post("/profiles/delete/:id", (req, res) => {
     });
   });
 });
-// Edit
+// Edit(Update) method function
 app.post("/profiles/edit/:id", (req, res) => {
   const id = req.params.id;
 
@@ -137,7 +140,7 @@ app.post("/profiles/edit/:id", (req, res) => {
   });
 });
 
-app.post("/notes/update/:id", (req, res) => {
+app.post("/profiles/update/:id", (req, res) => {
   const id = req.params.id;
 
   fs.readFile("./data/profiles.json", (err, data) => {
