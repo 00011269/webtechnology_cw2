@@ -1,0 +1,30 @@
+extends layout.pug
+ 
+block content 
+  .container 
+     h1 Create Profile
+     
+     if error 
+       p.error Some error occured! Try again!
+     if phoneError 
+       p.phoneError Phone number must consist of only numbers! 
+     if emailError 
+       p.emailError Invalid email address! 
+     
+     if success 
+       p.success Profile is created!   
+
+     form.form(action="/create" method='POST')
+         label FullName  
+         input.input(type="text" name='FullName')
+
+         label Email 
+         textarea.input(type="text" name="Email")
+
+         label PhoneNumber 
+         textarea.input(type="number" name="PhoneNumber")
+
+         label Address 
+         textarea.input(type="text" name="Address")
+
+         button.btn Create profile

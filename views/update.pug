@@ -1,0 +1,25 @@
+extends layout.pug
+ 
+block content 
+  .container 
+     h1 Create profile
+     
+     if error 
+       p.error Some error occured! Try again!
+
+     if success 
+       p.success profile is created!   
+
+     form.form(action="/profiles/update/" + profile.id method='POST')
+         label FullName  
+         input.input(type="text" name='FullName' value=profile.FullName)
+
+         label Email  
+         textarea.input(type="text" name="Email") #{profile.Email}
+
+         label PhoneNumber 
+         textarea.input(type="text" name="PhoneNumber") #{profile.PhoneNumber}
+         label Address   
+         textarea.input(type="text" name="Address") #{profile.Address}
+
+         button.btn Update the profile

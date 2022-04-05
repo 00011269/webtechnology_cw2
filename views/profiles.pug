@@ -1,0 +1,16 @@
+extends layout.pug
+ 
+block content
+  div.container 
+   h1 All profiles
+
+    each profile in profiles 
+      div.profile-container
+        a.note(href=`/profiles/${ profile.id }`) #{profile.FullName}  
+
+        form(action=`/profiles/edit/${ profile.id }` method="POST")
+          button.edit Edit 
+
+        form(action=`/profiles/delete/${ profile.id }` method="POST")
+          button.delete Delete 
+             
